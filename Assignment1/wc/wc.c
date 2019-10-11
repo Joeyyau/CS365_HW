@@ -48,6 +48,6 @@ else{
     printf("Spaces: %d \n", tSpaces);
 	printf("Words: %d \n", tWords);
 
-getchar();
+//getchar();
 return 0;
 }
