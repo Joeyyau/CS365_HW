@@ -15,10 +15,10 @@ int main(int argc, char *argv[]) {
 	
 	int n, last = '\n';
 
-	printf("Enter a filename: ");
-	gets(filename);	
+	//printf("Enter a filename: ");
+	//gets(filename);	
 	
-	fp = fopen(filename, "r");
+	fp = fopen(argv[1], "r");
 
 if(fp){
 	while((ch = getc(fp)) != EOF){
