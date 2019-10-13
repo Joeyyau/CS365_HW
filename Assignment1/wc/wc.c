@@ -39,19 +39,12 @@ if(fp){
 	while((ch = getc(fp)) != EOF){
 		last = n;
 		tChars++;
-		if(ch != ' ' && ch != '\n'){
-			++tWords;
-		}
-		if(ch == ' ' || ch == '\n'){
+		if(ch == ' '){
 			++tWords;
 		}
 		if(ch == '\n'){
 			++tLines;
 		}
-	}
-	if(tChars > 0){
-		++tLines;
-		++tWords;
 	}	
 }
 else{
@@ -59,27 +52,33 @@ else{
 	return 0;
 }
 
-	
+printf("\tFile: %s\n", argv[1]);
+printf("\t1st Flag: %s\n", argv[2]);
 
-	if(argv[2] = "-c"){
+if(argc >= 3){
+	if(strcmp(argv[2], "-c") == 0){
 		printf("Chars: %d \n", tChars);
 		return 0;	
 	}
-    if(argv[2] = "-l"){
+    if(strcmp(argv[2], "-l") == 0){
 		printf("Lines: %d \n", tLines);
 		return 0;
 	}
-	if(argv[2] = "-w"){
-		printf("Words: %d \n", tWords);
+	if(strcmp(argv[2], "-w") == 0){
+		printf("Words: %d \n", tWords / 2);
 		return 0;
 	}
 	else{
 		printf("Chars: %d \n", tChars);
 		printf("Lines: %d \n", tLines);
-		printf("Words: %d \n", tWords);
+		printf("Words: %d \n", tWords / 2);
 		return 0;
+	}
 }
-return 0;
+		printf("Chars: %d \n", tChars);
+		printf("Lines: %d \n", tLines);
+		printf("Words: %d \n", tWords / 2);
+	return 0;
 }
 
 
